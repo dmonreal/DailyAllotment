@@ -2,41 +2,41 @@ package com.monreal.deb.dailyallotment;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
-public class CalCount extends AppCompatActivity {
+public class CalFragment extends Fragment {
 
-    Button Button5, Button10, Button25, Button50, Button100;
+    Button Button5, Button10, Button25, Button50, Button100, reset;
     TextView calTotal;
     int calories = 0;
     EditText userLimit;
     int limit;
 
-
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cal_count);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ConstraintLayout rootView = (ConstraintLayout) inflater.inflate(R.layout.fragment_cal_count, container, false);
 
-        Button5 = findViewById(R.id.button5);
-        Button10 = findViewById(R.id.button10);
-        Button25 = findViewById(R.id.button25);
-        Button50 = findViewById(R.id.button50);
-        Button100 = findViewById(R.id.button100);
-        calTotal = findViewById(R.id.TVConsumed);
-        userLimit = findViewById(R.id.userLimit);
+        Button5 = rootView.findViewById(R.id.button5);
+        Button10 = rootView.findViewById(R.id.button10);
+        Button25 = rootView.findViewById(R.id.button25);
+        Button50 = rootView.findViewById(R.id.button50);
+        Button100 = rootView.findViewById(R.id.button100);
+        calTotal = rootView.findViewById(R.id.TVConsumed);
+        userLimit = rootView.findViewById(R.id.userLimit);
+        reset = rootView.findViewById(R.id.reset);
 
         Button5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +44,6 @@ public class CalCount extends AppCompatActivity {
 
                 calories = calories + 5;
                 displayCalories(calories);
-
-
-
             }
         });
 
@@ -86,32 +83,30 @@ public class CalCount extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void displayCalories(int calories) {
-        if (userLimit == null){
-            Toast.makeText(CalCount.this, "You must enter a calorie goal first", Toast
-                    .LENGTH_SHORT).show();
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calories = 0;
+               calTotal.setTextColor(Color.GREEN);
+                displayCalories(calories);
             }
-        else{
+        });
+
+
+
+
+        return rootView;
+
+    }
+        private void displayCalories(int calories) {
 
             limit = Integer.parseInt(userLimit.getText().toString());
             calTotal.setText(String.valueOf(calories));
             if(calories > limit) {
                 calTotal.setTextColor(Color.RED);
-                }
-
             }
+
     }
 
-    public void reset(View view){
-        calories = 0;
-        displayCalories(calories);
-        calTotal.setTextColor(Color.rgb(255, 153, 255));
-    }
-
-    public void carbTracker(View view) {
-        Intent intent = new Intent(this, CarbCount.class);
-        startActivity(intent);
-    }
 }
+
