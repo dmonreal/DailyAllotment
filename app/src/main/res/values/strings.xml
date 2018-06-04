@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Daily Allotment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="eachButton">Each button represents a 15g serving of Carbohydrates for a
         total of 120g per day</string>
     <string name="_5">5</string>
@@ -10,4 +12,8 @@
     <string name="calories_consumed">Calories Consumed</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="welcome">Welcome to Daily Allotment. Use the Navigation Drawer to the
+        left to access the various nutrition tools.</string>
+    <string name="feedback">Please leave feedback on the app in the Google Play Store! I
+        would love to incorporate your ideas for a healthier day.</string>
 </resources>

@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppCompatLightActionBar." parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="AppCompatLightActionBar." parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">casual</item>
         <item name="android:textStyle">bold</item>
@@ -10,7 +10,7 @@
 
     </style>
 
-    <style name="AppCompatLightActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar" >
+    <style name="AppCompatLightActionBar" parent="Theme.AppCompat.DayNight.NoActionBar" >
         <item name="android:colorBackground">@color/background_material_dark</item>
     </style>
 
