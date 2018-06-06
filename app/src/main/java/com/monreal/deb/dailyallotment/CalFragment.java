@@ -169,11 +169,12 @@ public class CalFragment extends Fragment {
         calTotal.setText(String.valueOf(calories));
 
 
-        if (calories > limit) {
+        //future development
+        /*if (calories > limit) {
             calTotal.setTextColor(Color.RED);
         } else {
             calTotal.setTextColor(Color.GREEN);
-        }
+        }*/
 
 
     }
