@@ -24,25 +24,32 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <FrameLayout
+            android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragmentContainer" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#000000"/>
+            <TextView
+                android:layout_width="287dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="150dp"
+                android:text="@string/welcome"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/feedback"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#000000"/>
+            <TextView
+                android:layout_width="235dp"
+                android:layout_height="126dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="350dp"
+                android:text="@string/feedback"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </FrameLayout>
 
     </LinearLayout>
 

@@ -1,5 +1,7 @@
 package com.monreal.deb.dailyallotment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,10 +10,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    ToggleButton toggleButton, toggleButton1, toggleButton2, toggleButton3, toggleButton4, toggleButton5, toggleButton6, toggleButton7;
+
 
 
     @Override
@@ -30,15 +35,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-    }
+
+
+
+
+       }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch(item.getItemId()){
             case R.id.nav_carb:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,
-                        new CarbFragment()).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,
+                       new  CarbFragment()).commit();
                 break;
 
             case R.id.nav_cal:

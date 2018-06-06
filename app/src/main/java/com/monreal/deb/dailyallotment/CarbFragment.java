@@ -2,8 +2,10 @@ package com.monreal.deb.dailyallotment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -22,6 +24,8 @@ public class CarbFragment extends Fragment {
 
     ToggleButton toggleButton, toggleButton1, toggleButton2, toggleButton3, toggleButton4, toggleButton5, toggleButton6, toggleButton7;
     Button reset;
+    boolean selected;
+    SharedPreferences preferences;
 
 
     @Nullable
@@ -40,13 +44,29 @@ public class CarbFragment extends Fragment {
         toggleButton7 = rootView.findViewById(R.id.toggleButton7);
         reset = rootView.findViewById(R.id.button);
 
+        preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+        if(preferences.contains("tbpref")){
+            selected = preferences.getBoolean("tbpref", false);
 
+            toggleButton.setChecked(selected);
+            toggleButton1.setChecked(selected);
+            toggleButton2.setChecked(selected);
+            toggleButton3.setChecked(selected);
+            toggleButton4.setChecked(selected);
+            toggleButton5.setChecked(selected);
+            toggleButton6.setChecked(selected);
+            toggleButton7.setChecked(selected);
 
+        }
 
-
-       reset.setOnClickListener(new View.OnClickListener() {
+        reset.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
+               SharedPreferences.Editor editor = preferences.edit();
+               editor.clear();
+               editor.apply();
+
                toggleButton.setChecked(false);
                toggleButton.setBackgroundColor(Color.rgb(255, 153, 153));
                toggleButton1.setChecked(false);
@@ -64,6 +84,8 @@ public class CarbFragment extends Fragment {
                toggleButton7.setChecked(false);
                toggleButton7.setBackgroundColor(Color.rgb(204, 204, 204));
 
+
+
                Toast toast = Toast.makeText(getContext(), "Ready to go again!", Toast.LENGTH_SHORT);
                toast.show();
            }
@@ -74,15 +96,18 @@ public class CarbFragment extends Fragment {
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 toggleButton.setBackgroundColor(Color.DKGRAY);
 
                 Toast toast = Toast.makeText(getContext(), "Nom Nom Nom", Toast.LENGTH_SHORT);
                 toast.show();
-            }
+
+                }
         });
         toggleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 toggleButton1.setBackgroundColor(Color.DKGRAY);
 
                 Toast toast = Toast.makeText(getContext(), "You've got this!", Toast.LENGTH_SHORT);
