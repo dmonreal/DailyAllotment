@@ -13,6 +13,7 @@
         <item android:id="@+id/nav_cal"
             android:icon="@drawable/ic_apple_core_silhouette"
             android:title="Calorie Counter"/>
+
     </group>
 
 
