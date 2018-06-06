@@ -44,91 +44,59 @@ public class CarbFragment extends Fragment {
         toggleButton7 = rootView.findViewById(R.id.toggleButton7);
         reset = rootView.findViewById(R.id.button);
 
-        preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
-        if(preferences.contains("tbpref")){
-            selected = preferences.getBoolean("tbpref", false);
-
-            toggleButton.setChecked(selected);
-            toggleButton1.setChecked(selected);
-            toggleButton2.setChecked(selected);
-            toggleButton3.setChecked(selected);
-            toggleButton4.setChecked(selected);
-            toggleButton5.setChecked(selected);
-            toggleButton6.setChecked(selected);
-            toggleButton7.setChecked(selected);
-
-        }
-
-        reset.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-
-               SharedPreferences.Editor editor = preferences.edit();
-               editor.clear();
-               editor.apply();
-
-               toggleButton.setChecked(false);
-               toggleButton.setBackgroundColor(Color.rgb(255, 153, 153));
-               toggleButton1.setChecked(false);
-               toggleButton1.setBackgroundColor(Color.rgb(255, 219, 153));
-               toggleButton2.setChecked(false);
-               toggleButton2.setBackgroundColor(Color.rgb(255, 255, 153));
-               toggleButton3.setChecked(false);
-               toggleButton3.setBackgroundColor(Color.rgb(153, 255, 153));
-               toggleButton4.setChecked(false);
-               toggleButton4.setBackgroundColor(Color.rgb(153, 153, 255));
-               toggleButton5.setChecked(false);
-               toggleButton5.setBackgroundColor(Color.rgb(255, 153, 255));
-               toggleButton6.setChecked(false);
-               toggleButton6.setBackgroundColor(Color.rgb(255, 255, 255));
-               toggleButton7.setChecked(false);
-               toggleButton7.setBackgroundColor(Color.rgb(204, 204, 204));
-
-
-
-               Toast toast = Toast.makeText(getContext(), "Ready to go again!", Toast.LENGTH_SHORT);
-               toast.show();
-           }
-       });
-
-
-
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 toggleButton.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tbpref", toggleButton.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "Nom Nom Nom", Toast.LENGTH_SHORT);
                 toast.show();
 
-                }
+            }
         });
+
         toggleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 toggleButton1.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb1pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "You've got this!", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-
         toggleButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toggleButton2.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb2pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "Look at you go!!!", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
+
         toggleButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toggleButton3.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb3pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "You are crushing this!", Toast.LENGTH_SHORT);
                 toast.show();
@@ -139,6 +107,10 @@ public class CarbFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 toggleButton4.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb4pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "Killin' IT!", Toast.LENGTH_SHORT);
                 toast.show();
@@ -148,7 +120,12 @@ public class CarbFragment extends Fragment {
         toggleButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 toggleButton5.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb5pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "Carbs don't control you!", Toast.LENGTH_SHORT);
                 toast.show();
@@ -159,6 +136,10 @@ public class CarbFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 toggleButton6.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb6pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "You're so awesome", Toast.LENGTH_SHORT);
                 toast.show();
@@ -169,11 +150,80 @@ public class CarbFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 toggleButton7.setBackgroundColor(Color.DKGRAY);
+                preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("tb7pref", toggleButton1.isChecked());
+                editor.apply();
 
                 Toast toast = Toast.makeText(getContext(), "Kickin' butt and taking names", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+
+                toggleButton.setChecked(false);
+                toggleButton.setBackgroundColor(Color.rgb(255, 153, 153));
+                toggleButton1.setChecked(false);
+                toggleButton1.setBackgroundColor(Color.rgb(255, 219, 153));
+                toggleButton2.setChecked(false);
+                toggleButton2.setBackgroundColor(Color.rgb(255, 255, 153));
+                toggleButton3.setChecked(false);
+                toggleButton3.setBackgroundColor(Color.rgb(153, 255, 153));
+                toggleButton4.setChecked(false);
+                toggleButton4.setBackgroundColor(Color.rgb(153, 153, 255));
+                toggleButton5.setChecked(false);
+                toggleButton5.setBackgroundColor(Color.rgb(255, 153, 255));
+                toggleButton6.setChecked(false);
+                toggleButton6.setBackgroundColor(Color.rgb(255, 255, 255));
+                toggleButton7.setChecked(false);
+                toggleButton7.setBackgroundColor(Color.rgb(204, 204, 204));
+
+
+                Toast toast = Toast.makeText(getContext(), "Ready to go again!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+        preferences = getActivity().getSharedPreferences("checkedState", Context.MODE_PRIVATE);
+        if (preferences.contains("tbpref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton.setChecked(selected);
+        }
+        if (preferences.contains("tb1pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton1.setChecked(selected);
+        }
+        if (preferences.contains("tb2pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton2.setChecked(selected);
+        }
+        if (preferences.contains("tb3pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton3.setChecked(selected);
+        }
+        if (preferences.contains("tb4pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton4.setChecked(selected);
+        }
+        if (preferences.contains("tb5pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton5.setChecked(selected);
+        }
+        if (preferences.contains("tb6pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton6.setChecked(selected);
+        }
+        if (preferences.contains("tb7pref")) {
+            selected = preferences.getBoolean("tbpref", false);
+            toggleButton7.setChecked(selected);
+        }
+
         return rootView;
     }
 }
