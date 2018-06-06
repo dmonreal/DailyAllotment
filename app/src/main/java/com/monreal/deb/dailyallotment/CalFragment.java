@@ -20,11 +20,11 @@ import android.widget.ToggleButton;
 
 public class CalFragment extends Fragment {
 
-    Button Button5, Button10, Button25, Button50, Button100, reset;
+    Button Button5, Button10, Button25, Button50, Button100, save, reset;
     TextView calTotal;
     int calories = 0;
     EditText userLimit;
-    int limit;
+    int limit = 0;
     SharedPreferences calCount, userCal;
 
     @Nullable
@@ -56,6 +56,7 @@ public class CalFragment extends Fragment {
         calTotal = rootView.findViewById(R.id.TVConsumed);
         userLimit = rootView.findViewById(R.id.userLimit);
         reset = rootView.findViewById(R.id.reset);
+        save = rootView.findViewById(R.id.save);
 
         Button5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,15 +134,36 @@ public class CalFragment extends Fragment {
             public void onClick(View v) {
 
                 SharedPreferences.Editor editor = calCount.edit();
-                SharedPreferences.Editor editor1 = userCal.edit();
                 editor.clear();
                 editor.commit();
-
                 calories = 0;
-                limit = 0;
+
                 calTotal.setTextColor(Color.GREEN);
+
+                SharedPreferences.Editor editor1 = userCal.edit();
+                editor1.clear();
+                editor1.commit();
+                limit = 0;
+
+                userLimit.setText(String.valueOf(limit));
                 displayCalories(calories);
-                displayLimit(limit);
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    limit = Integer.parseInt(userLimit.getText().toString());
+                } catch (NumberFormatException ex) {
+                    Toast.makeText(getContext(), "Please enter your goal before tracking", Toast.LENGTH_SHORT);
+                }
+
+                SharedPreferences.Editor editor1 = userCal.edit();
+                editor1.putInt("upperLimit", limit);
+                editor1.apply();
+
 
             }
         });
@@ -152,29 +174,19 @@ public class CalFragment extends Fragment {
 
     }
 
-    private void displayLimit(int limit) {
-        try {
-            limit = Integer.parseInt(userLimit.getText().toString());
-        } catch (NumberFormatException ex) {
-            Toast.makeText(getContext(), "Please enter your goal before tracking", Toast.LENGTH_SHORT).show();
-        }
+    public void displayLimit(int limit){
         userLimit.setText(String.valueOf(limit));
-        SharedPreferences.Editor editor1 = userCal.edit();
-        editor1.putInt("upperLimit", limit);
-        editor1.apply();
     }
 
     private void displayCalories(int calories) {
 
         calTotal.setText(String.valueOf(calories));
 
-
-        //future development
-        /*if (calories > limit) {
+        if (calories > limit) {
             calTotal.setTextColor(Color.RED);
         } else {
             calTotal.setTextColor(Color.GREEN);
-        }*/
+        }
 
 
     }
