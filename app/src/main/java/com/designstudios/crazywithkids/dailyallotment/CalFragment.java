@@ -22,7 +22,7 @@ public class CalFragment extends Fragment {
     TextView calTotal;
     int calories = 0;
     EditText userLimit;
-    int limit = 0;
+    int limit;
     SharedPreferences calCount, userCal;
 
     @Nullable
@@ -39,12 +39,12 @@ public class CalFragment extends Fragment {
         }
 
         userCal = getActivity().getSharedPreferences("enteredCal", Context.MODE_PRIVATE);
-        if(userCal.contains("upperLimit")){
+        if (userCal.contains("upperLimit")) {
             limit = userCal.getInt("upperLimit", 0);
-            }
-            else{
+        } else {
             limit = 0;
         }
+
 
         Button5 = rootView.findViewById(R.id.button5);
         Button10 = rootView.findViewById(R.id.button10);
@@ -152,27 +152,26 @@ public class CalFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                try {
-                    limit = Integer.parseInt(userLimit.getText().toString());
-                } catch (NumberFormatException ex) {
-                    Toast.makeText(getContext(), "Please enter your goal before tracking", Toast.LENGTH_SHORT);
-                }
+                limit = Integer.parseInt(userLimit.getText().toString());
 
                 SharedPreferences.Editor editor1 = userCal.edit();
                 editor1.putInt("upperLimit", limit);
                 editor1.apply();
 
+                Toast.makeText(getContext(), "Input Saved", Toast.LENGTH_SHORT).show();
 
             }
         });
 
+
         displayCalories(calories);
+
         displayLimit(limit);
         return rootView;
 
     }
 
-    public void displayLimit(int limit){
+    public void displayLimit(int limit) {
         userLimit.setText(String.valueOf(limit));
     }
 
