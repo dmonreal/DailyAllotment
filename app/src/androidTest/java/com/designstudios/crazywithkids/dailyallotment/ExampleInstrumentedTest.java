@@ -1,4 +1,4 @@
-package com.monreal.deb.dailyallotment;
+package com.designstudios.crazywithkids.dailyallotment;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

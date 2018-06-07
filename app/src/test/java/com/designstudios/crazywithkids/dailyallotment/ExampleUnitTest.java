@@ -1,4 +1,4 @@
-package com.monreal.deb.dailyallotment;
+package com.designstudios.crazywithkids.dailyallotment;
 
 import org.junit.Test;
 

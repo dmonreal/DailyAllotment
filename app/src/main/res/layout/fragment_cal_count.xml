@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark"
-    tools:context="com.monreal.deb.dailyallotment.CalFragment"
+    tools:context="com.designstudios.crazywithkids.dailyallotment.CalFragment"
     tools:layout_editor_absoluteY="25dp">
 
     <Button
