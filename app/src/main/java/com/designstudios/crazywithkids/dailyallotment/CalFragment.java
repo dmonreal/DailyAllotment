@@ -1,7 +1,6 @@
-package com.monreal.deb.dailyallotment;
+package com.designstudios.crazywithkids.dailyallotment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 public class CalFragment extends Fragment {
 
