@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(item.getItemId()){
             case R.id.nav_carb:
                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,
-                       new  CarbFragment()).commit();
+                       new  CarbCountFragment()).commit();
                 break;
 
             case R.id.nav_cal:

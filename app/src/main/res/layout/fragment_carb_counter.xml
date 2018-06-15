@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/actionModeSplitBackground"
+    tools:context="com.designstudios.crazywithkids.dailyallotment.CarbCountFragment"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Carb Counter"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="102dp"
+            tools:layout_editor_absoluteY="90dp">
+
+            <ToggleButton
+                android:id="@+id/toggleButton5"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="325dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton6"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="423dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton7"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="421dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_pie_chart_5" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="133dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="231dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="247dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="ToggleButton"
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textOff="Available"
+                android:textOn="Eaten"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="327dp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+        <Button
+            android:id="@+id/button10"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_10"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/button25"
+            app:layout_constraintEnd_toEndOf="@+id/button25"
+            app:layout_constraintStart_toStartOf="@+id/button25" />
+
+        <Button
+            android:id="@+id/button25"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_25"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/reset"
+            app:layout_constraintStart_toEndOf="@+id/reset" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Label">
+
+        <Button
+            android:id="@+id/button100"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/button50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userLimit"
+            app:layout_constraintStart_toStartOf="@+id/button50" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/button10"
+            app:layout_constraintEnd_toEndOf="@+id/button10"
+            app:layout_constraintStart_toStartOf="@+id/button10" />
+
+        <Button
+            android:id="@+id/button50"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_15"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/button5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/save"
+            app:layout_constraintStart_toStartOf="@+id/button5" />
+
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/carbs_consumed"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/TVConsumed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="41dp"
+        android:layout_marginTop="14dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/tableRow"
+        app:layout_constraintTop_toTopOf="@+id/divider" />
+
+    <Button
+        android:id="@+id/reset"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="233dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="casual"
+        android:text="@string/eachButton"
+        android:textAlignment="center"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+
+</android.support.constraint.ConstraintLayout>
+
