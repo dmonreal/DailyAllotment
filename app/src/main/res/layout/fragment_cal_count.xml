@@ -8,146 +8,191 @@
     tools:context="com.designstudios.crazywithkids.dailyallotment.CalFragment"
     tools:layout_editor_absoluteY="25dp">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:background="#ff9999"
-        android:text="@string/_5"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="@+id/button10"
-        app:layout_constraintStart_toStartOf="@+id/button10" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calorie Counter"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:background="#ffdb99"
-        android:text="@string/_10"
-        app:layout_constraintBottom_toTopOf="@+id/button25"
-        app:layout_constraintEnd_toEndOf="@+id/button25"
-        app:layout_constraintStart_toStartOf="@+id/button25" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:background="#ffff99"
-        android:text="@string/_25"
-        app:layout_constraintBottom_toTopOf="@+id/button50"
-        app:layout_constraintEnd_toEndOf="@+id/button50"
-        app:layout_constraintStart_toStartOf="@+id/button50" />
-
-    <Button
-        android:id="@+id/button50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:background="#99ff99"
-        android:text="@string/_50"
-        app:layout_constraintBottom_toTopOf="@+id/button100"
-        app:layout_constraintEnd_toEndOf="@+id/button100"
-        app:layout_constraintStart_toStartOf="@+id/button100" />
-
-    <Button
-        android:id="@+id/button100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="14dp"
-        android:background="#9999ff"
-        android:text="@string/_100"
-        app:layout_constraintBottom_toTopOf="@+id/reset"
-        app:layout_constraintStart_toEndOf="@+id/reset" />
-
-    <TextView
-        android:id="@+id/Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="46dp"
-        android:text="@string/calories_consumed"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save" />
-
-    <TextView
-        android:id="@+id/TVConsumed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_green_light"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/Label"
-        app:layout_constraintStart_toStartOf="@+id/Label"
-        app:layout_constraintTop_toBottomOf="@+id/Label" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="?attr/colorError"
-        android:text="reset"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <TextView
-        android:id="@+id/limit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="83dp"
-        android:text="Enter your Caloric Goal"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/userLimit"
-        android:layout_width="117dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/limit"
-        app:layout_constraintStart_toStartOf="@+id/limit"
-        app:layout_constraintTop_toBottomOf="@+id/limit" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/save"
-        android:layout_width="66dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="149dp"
-        android:layout_marginTop="150dp"
-        android:background="?attr/colorAccent"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="@+id/button50"
-        app:layout_constraintEnd_toEndOf="@+id/userLimit"
-        app:layout_constraintStart_toStartOf="@+id/userLimit"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="23dp"
+                android:text="Calorie Counter"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toTopOf="@+id/limit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/userLimit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="134dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toStartOf="@+id/save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/save" />
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="179dp"
+                android:layout_height="49dp"
+                android:layout_marginBottom="22dp"
+                app:layout_constraintBottom_toTopOf="@+id/reset"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow3">
+
+                <Button
+                    android:id="@+id/button5"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_5"
+                    app:layout_constraintBottom_toTopOf="@+id/button10"
+                    app:layout_constraintEnd_toEndOf="@+id/button10"
+                    app:layout_constraintStart_toStartOf="@+id/button10" />
+
+                <Button
+                    android:id="@+id/button10"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_10"
+                    app:layout_constraintBottom_toTopOf="@+id/button25"
+                    app:layout_constraintEnd_toEndOf="@+id/button25"
+                    app:layout_constraintStart_toStartOf="@+id/button25" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="269dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVConsumed">
+
+                <Button
+                    android:id="@+id/button25"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_25"
+                    app:layout_constraintBottom_toTopOf="@+id/button50"
+                    app:layout_constraintEnd_toEndOf="@+id/button50"
+                    app:layout_constraintStart_toStartOf="@+id/button50" />
+
+                <Button
+                    android:id="@+id/button50"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_50"
+                    app:layout_constraintBottom_toTopOf="@+id/button100"
+                    app:layout_constraintEnd_toEndOf="@+id/button100"
+                    app:layout_constraintStart_toStartOf="@+id/button100" />
+
+                <Button
+
+                    android:id="@+id/button100"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_100"
+                    app:layout_constraintBottom_toTopOf="@+id/reset"
+                    app:layout_constraintStart_toEndOf="@+id/reset" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="21dp"
+                android:layout_marginStart="20dp"
+                android:text="Enter your Caloric Goal"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/save"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/TVConsumed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="61dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Label" />
+
+            <Button
+                android:id="@+id/save"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginEnd="56dp"
+                android:text="Save"
+                app:layout_constraintBottom_toTopOf="@+id/Label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/userLimit"
+                app:layout_constraintTop_toBottomOf="@+id/limit" />
+
+            <TextView
+                android:id="@+id/Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:text="@string/calories_consumed"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/TVConsumed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/save" />
+
+            <Button
+                android:id="@+id/reset"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="reset"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow4" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
